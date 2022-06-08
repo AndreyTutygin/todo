@@ -1,0 +1,22 @@
+<section class="hero">
+    <div class="container hero__container">
+        <div class="hero__header">
+            <h1 class="title">Avtograph TODO list</h1>
+            <select class="todo-options" aria-label="Сортировка задач">
+                <option class="todo-options__option" value="active">В работе</option>
+                <option class="todo-options__option" value="completed">Выполненные</option>
+                <option class="todo-options__option" value="deleted">Удалённые</option>
+                <option class="todo-options__option" value="all">Все</option>
+            </select>
+        </div>
+        <div class="todo">
+            <div class="todo-add todo__todo-add">
+                <label class="todo__input-label">
+                    <input class="input-reset todo-add__input" type="text" placeholder="Поле ввода">
+                </label>
+                <button class="btn-reset todo-add__btn" aria-label="Добавить задачу"></button>
+            </div>
+            <ul class="list-reset todo__list" data-todo-option="active"></ul>
+        </div>
+    </div>
+</section>

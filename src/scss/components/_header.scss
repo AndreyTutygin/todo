@@ -1,0 +1,56 @@
+.header {
+    padding: 10px 0;
+    background-color: #fff;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 13px;
+    text-transform: uppercase;
+
+    &__img {
+        width: 10px;
+    }
+}
+
+.nav {
+    width: 45px;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        &_message {
+            &:hover {
+                .nav__icon_message {
+                    fill: $mainColor;
+                }
+            }
+        }
+
+        &_profile {
+            &:hover {
+                .nav__icon_profile {
+                    fill: $mainColor;
+                }
+            }
+        }
+    }
+
+    &__icon {
+        width: 15px;
+        height: 15px;
+        fill: $pColor;
+        transition: 0.2s;
+    }
+}
