@@ -37,6 +37,13 @@
     padding-right: 10px;
 }
 
+@media (min-width: 640px) {
+    .choices__list--dropdown .choices__item--selectable,
+    .choices__list[aria-expanded] .choices__item--selectable {
+        padding-right: 10px;
+    }
+}
+
 .choices__list--dropdown,
 .choices__list[aria-expanded] {
     border: none;
@@ -94,6 +101,10 @@
         padding: 10px 38px 10px 10px;
         width: 100%;
         background-color: #fff;
+
+        &:disabled {
+            background-color: #e8e8e8;
+        }
     }
 
     &__btn {
@@ -130,7 +141,7 @@
         display: grid;
         align-items: start;
         grid-template-columns: 15px 1fr 15px;
-        overflow: hidden;
+        overflow-x: hidden;
         padding: 10px;
         width: 100%;
         background-color: #fff;
