@@ -21,6 +21,11 @@ const profileModal = () => {
         enableScroll();
     });
 
+    modal?.addEventListener('click', () => {
+        modal.classList.remove('profile-modal_active');
+        enableScroll();
+    });
+
     modalItems?.forEach(el => {
         el.addEventListener('click', () => {
             modal.classList.remove('profile-modal_active');

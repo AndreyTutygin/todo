@@ -84,7 +84,7 @@
 }
 
 [data-todo-option="all"] .todo__item:not([data-todo-state="all"]) {
-    display: flex;
+    display: grid;
 }
 
 [data-todo-state="active"] .todo__action_restore,
@@ -190,4 +190,8 @@
 
 [data-todo-state="deleted"] {
     color: rgb(240, 40, 40);
+}
+
+.is-order {
+    order: 1;
 }

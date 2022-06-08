@@ -2,19 +2,30 @@ const todo = {
     action(e) {
         const target = e.target;
         const input = document.querySelector('.todo-add__input');
+
         if (target.classList.contains('todo__action')) {
             const action = target.dataset.todoAction;
             const elemItem = target.closest('.todo__item');
+
+            if (elemItem.dataset.todoState === 'active') {
+                elemItem.classList.add('is-order');
+            } else if (elemItem.dataset.todoState === 'deleted' || elemItem.dataset.todoState === 'completed') {
+                elemItem.classList.remove('is-order');
+            }
+
             if (action === 'deleted' && elemItem.dataset.todoState === 'deleted') {
                 elemItem.remove();
             } else {
                 elemItem.dataset.todoState = action;
             }
+
             this.save();
+
         } else if (target.classList.contains('todo-add__btn')) {
             this.add();
             this.save();
         }
+
         input.addEventListener('keydown', (e) => {
             if (e.code == 'Enter') {
                 this.add();
@@ -24,9 +35,11 @@ const todo = {
     },
     add() {
         const elemText = document.querySelector('.todo-add__input');
+
         if (elemText.disabled || !elemText.value.length) {
             return;
         }
+
         document.querySelector('.todo__list').insertAdjacentHTML('beforeend', create(elemText.value));
         elemText.value = '';
     },
